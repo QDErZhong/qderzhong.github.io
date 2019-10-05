@@ -1,0 +1,31 @@
+.panel p a {
+  /* 原有的文字颜色 */
+  --color-text: #777;
+  /* 下划线颜色 */
+  --color-underline: #39c0c0;
+  /* 下划线高度 */
+  --height-underline: 1.28px;
+  /* 过度时长 */
+  --time-transition: 0.2s;
+
+  color: var(--color-text);
+  text-decoration: none;
+  border-bottom: var(--height-underline) solid var(--color-text);
+
+  position: relative;
+} .panel p a::before {
+  content: "";
+  background-color: var(--color-underline);
+
+  position: absolute;
+  bottom: 0;
+  height: var(--height-underline);
+  right: 0;
+  width: 0;
+
+  transition: width 0.2s linear;
+  -webkit-transition: width 0.2s linear;
+} .panel p a:hover::before {
+  left: 0;
+  width: 100%;
+}
